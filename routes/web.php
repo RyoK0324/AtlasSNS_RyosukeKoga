@@ -32,7 +32,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/logout','Auth\LoginController@logout');
 
 /*リダイレクト*/
-Route::group(['middleware' => 'guest'], function(){
+Route::group(['middleware' => 'auth'], function(){
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 
